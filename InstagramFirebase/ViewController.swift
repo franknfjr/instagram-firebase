@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let plusPhotoButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
