@@ -62,11 +62,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(plusPhotoButton)
-        plusPhotoButton.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        plusPhotoButton.widthAnchor.constraint(equalToConstant: 140).isActive = true
-        plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        plusPhotoButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
         
+        plusPhotoButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 60, paddingLeft: 0, paddingBotton: 0, paddingRight: 0, width: 140, height: 140)
+        plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
         setupInputFields()
     }
     
