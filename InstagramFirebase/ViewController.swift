@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -23,7 +22,6 @@ class ViewController: UIViewController {
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
-        tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
     
@@ -33,7 +31,6 @@ class ViewController: UIViewController {
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
-        tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
     
@@ -44,7 +41,6 @@ class ViewController: UIViewController {
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
-        tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
     
