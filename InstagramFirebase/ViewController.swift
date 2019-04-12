@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         tf.font = UIFont.systemFont(ofSize: 14)
         
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
-
+        
         return tf
     }()
     
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         tf.font = UIFont.systemFont(ofSize: 14)
         
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
-
+        
         return tf
     }()
     
@@ -94,6 +94,20 @@ class ViewController: UIViewController {
             }
             
             print("Successfully created user:", user?.user.uid ?? "")
+            
+            guard let uid = user?.user.uid else { return }
+            
+            let usernameValues = ["username": username]
+            let values = [uid: usernameValues]
+            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                
+                if let err = err {
+                    print("Failed to save user info into database:", err)
+                    return
+                }
+                
+                print("Successfully saved user to database.")
+            })
         })
     }
     
