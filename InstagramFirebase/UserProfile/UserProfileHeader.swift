@@ -11,6 +11,14 @@ import Firebase
 
 class UserProfileHeader: UICollectionViewCell {
     
+    var user: User? {
+        didSet {
+            setupProfileImage()
+            
+            usernameLabel.text = user?.username
+        }
+    }
+    
     let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .red
@@ -38,6 +46,13 @@ class UserProfileHeader: UICollectionViewCell {
         return button
     }()
     
+    let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Username"
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -47,6 +62,10 @@ class UserProfileHeader: UICollectionViewCell {
         profileImageView.clipsToBounds = true
         
         setupBottonToolbar()
+        
+        addSubview(usernameLabel)
+        
+        usernameLabel.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, bottom: gridButton.topAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 12, paddingBotton: 0, paddingRight: 12, width: 0, height: 0)
         
     }
     
@@ -58,12 +77,6 @@ class UserProfileHeader: UICollectionViewCell {
         addSubview(stackView)
         
         stackView.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBotton: 0, paddingRight: 0, width: 0, height: 50)
-    }
-    
-    var user: User? {
-        didSet {
-            setupProfileImage()
-        }
     }
     
     fileprivate func setupProfileImage(){
