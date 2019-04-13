@@ -13,5 +13,7 @@ class UserProfileController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView?.backgroundColor = .green
+        
+        navigationItem.title = "User Profile"
     }
 }
