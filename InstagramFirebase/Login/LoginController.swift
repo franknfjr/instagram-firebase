@@ -26,7 +26,7 @@ class LoginController: UIViewController {
         return view
     }()
     
-    let signUpButton: UIButton = {
+    let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -89,8 +89,8 @@ class LoginController: UIViewController {
         
         view.backgroundColor = .white
         
-        view.addSubview(signUpButton)
-        signUpButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBotton: -12, paddingRight: 0, width: 0, height: 50)
+        view.addSubview(dontHaveAccountButton)
+        dontHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBotton: -12, paddingRight: 0, width: 0, height: 50)
         
         setupInputFields()
     }
