@@ -20,6 +20,7 @@ class MainTabBarController: UITabBarController {
         navController.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_selected")
         
         tabBar.tintColor = .black
+        
         viewControllers = [navController, UIViewController()]
     }
 }
