@@ -53,6 +53,30 @@ class UserProfileHeader: UICollectionViewCell {
         return label
     }()
     
+    let postsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "10\npost"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let followersLabel: UILabel = {
+        let label = UILabel()
+        label.text = "11\nfollowers"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let followingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "12\nfollowing"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -67,6 +91,17 @@ class UserProfileHeader: UICollectionViewCell {
         
         usernameLabel.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, bottom: gridButton.topAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 12, paddingBotton: 0, paddingRight: 12, width: 0, height: 0)
         
+        setupUserStatsView()
+        
+    }
+    
+    fileprivate func setupUserStatsView() {
+        let stackView = UIStackView(arrangedSubviews: [postsLabel, followersLabel, followingLabel])
+        
+        stackView.distribution = .fillEqually
+        addSubview(stackView)
+
+        stackView.anchor(top: topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop:   12, paddingLeft: 12, paddingBotton: 0, paddingRight: 12, width: 0, height: 50)
     }
     
     fileprivate func setupBottonToolbar() {
