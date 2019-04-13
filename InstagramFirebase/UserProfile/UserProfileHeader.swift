@@ -27,39 +27,37 @@ class UserProfileHeader: UICollectionViewCell {
         profileImageView.layer.cornerRadius = 80 / 2
         profileImageView.clipsToBounds = true
         
-        setupProfileImage()
+    }
+    
+    var user: User? {
+        didSet {
+            setupProfileImage()
+        }
     }
     
     fileprivate func setupProfileImage(){
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot.value ?? "")
+        guard let profileImageUrl = user?.profileImageUrl else { return }
+        
+        guard let url = URL(string: profileImageUrl) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            if let err = err {
+                //check for the error, then construct the image using data
+                print("Failed to fetch profile image:", err)
+                return
+            }
             
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
+            //perhaps check for response status of 200 (HTTP OK)
+            guard let data = data else { return }
             
-            guard let profileImageUrl = dictionary["profileImageUrl"] as? String else { return }
+            let image = UIImage(data: data)
             
-            guard let url = URL(string: profileImageUrl) else { return }
+            //need to get back into the main UI thread
+            DispatchQueue.main.async {
+                self.profileImageView.image = image
+            }
             
-            URLSession.shared.dataTask(with: url) { (data, response, err) in
-                if let err = err {
-                    //check for the error, then construct the image using data
-                    print("Failed to fetch profile image:", err)
-                    return
-                }
-                
-                //perhaps check for response status of 200 (HTTP OK)
-                guard let data = data else { return }
-                
-                let image = UIImage(data: data)
-                
-                //need to get back into the main UI thread
-                DispatchQueue.main.async {
-                    self.profileImageView.image = image
-                }
-                
-                }.resume()
-        }
+            }.resume()
     }
     
     required init?(coder aDecoder: NSCoder) {
