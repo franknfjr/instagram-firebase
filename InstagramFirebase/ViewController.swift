@@ -122,24 +122,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             print("Successfully created user:", user?.user.uid ?? "")
             
-            guard let uid = user?.user.uid else { return }
-            
-            let usernameValues = ["username": username]
-            let values = [uid: usernameValues]
-            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
-                
-                if let err = err {
-                    print("Failed to save user info into database:", err)
-                    return
-                }
-                
-                print("Successfully saved user to database.")
-            })
             
             guard let image = self.plusPhotoButton.imageView?.image else { return }
             guard let uploadData =  image.jpegData(compressionQuality: 0.3) else { return }
             
-            let storageItem = Storage.storage().reference().child("picture_profile")
+            let filename = NSUUID().uuidString
+            var imageURL = String()
+            
+            let storageItem = Storage.storage().reference().child("profile_images").child(filename)
             storageItem.putData(uploadData, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Failed to upload profile image")
@@ -151,13 +141,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         }
                         
                         if url != nil {
-                            let imageURL = url!.absoluteString
+                            imageURL = url!.absoluteString
                             print("Successfully uploaded profile image", imageURL)
                             
                         }
                     })
                 }
             }
+            
+            guard let uid = user?.user.uid else { return }
+            
+            let dictionaryValues = ["username": username, "profileImageUrl": imageURL]
+            let values = [uid: dictionaryValues]
+            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                
+                if let err = err {
+                    print("Failed to save user info into database:", err)
+                    return
+                }
+                
+                print("Successfully saved user to database.")
+            })
         })
     }
     
