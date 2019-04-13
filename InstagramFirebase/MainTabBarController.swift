@@ -11,11 +11,10 @@ import UIKit
 class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let userProfileController = UserProfileController()
         
-        let redVC = UIViewController()
-        redVC.view.backgroundColor = .red
-        
-        let navController = UINavigationController(rootViewController: redVC)
+        let navController = UINavigationController(rootViewController: userProfileController)
         
         viewControllers = [navController]
     }
