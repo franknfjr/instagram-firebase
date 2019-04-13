@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41E24DD7D32A03D1D2B489F7 /* Pods_InstagramFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1641D849ED322A425AAC23E5 /* Pods_InstagramFirebase.framework */; };
+		BB11950422627DE400F132B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11950322627DE400F132B3 /* LoginController.swift */; };
 		BB2361712262040000B069C7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361702262040000B069C7 /* MainTabBarController.swift */; };
 		BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361722262053A00B069C7 /* UserProfileController.swift */; };
 		BB236176226228C900B069C7 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB236175226228C900B069C7 /* UserProfileHeader.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1641D849ED322A425AAC23E5 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB11950322627DE400F132B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BB2361702262040000B069C7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BB2361722262053A00B069C7 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		BB236175226228C900B069C7 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB11950222627D2100F132B3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BB11950322627DE400F132B3 /* LoginController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		BB236174226228A500B069C7 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		BBAA6BD2225E0E2D00205C88 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				BB11950222627D2100F132B3 /* Login */,
 				BB236174226228A500B069C7 /* UserProfile */,
 				BB618567225EB39D000CBD62 /* Utils */,
 				BBAA6BD3225E0E2D00205C88 /* AppDelegate.swift */,
@@ -250,6 +261,7 @@
 				BB236176226228C900B069C7 /* UserProfileHeader.swift in Sources */,
 				BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */,
 				BBAA6BD4225E0E2D00205C88 /* AppDelegate.swift in Sources */,
+				BB11950422627DE400F132B3 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
