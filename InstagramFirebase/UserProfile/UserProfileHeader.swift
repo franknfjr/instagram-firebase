@@ -55,7 +55,12 @@ class UserProfileHeader: UICollectionViewCell {
     
     let postsLabel: UILabel = {
         let label = UILabel()
-        label.text = "10\npost"
+        
+        let attributedText = NSMutableAttributedString(string: "11\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        
+        attributedText.append(NSAttributedString(string: "Posts", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+                                                                               NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        label.attributedText = attributedText
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -63,7 +68,12 @@ class UserProfileHeader: UICollectionViewCell {
     
     let followersLabel: UILabel = {
         let label = UILabel()
-        label.text = "11\nfollowers"
+
+        let attributedText = NSMutableAttributedString(string: "12\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        
+        attributedText.append(NSAttributedString(string: "Followers", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+                                                                               NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        label.attributedText = attributedText
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -71,7 +81,12 @@ class UserProfileHeader: UICollectionViewCell {
     
     let followingLabel: UILabel = {
         let label = UILabel()
-        label.text = "12\nfollowing"
+        
+        let attributedText = NSMutableAttributedString(string: "10\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        
+        attributedText.append(NSAttributedString(string: "Following", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+                                                                                   NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        label.attributedText = attributedText
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -115,7 +130,7 @@ class UserProfileHeader: UICollectionViewCell {
         
         stackView.distribution = .fillEqually
         addSubview(stackView)
-
+        
         stackView.anchor(top: topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop:   12, paddingLeft: 12, paddingBotton: 0, paddingRight: 12, width: 0, height: 50)
     }
     
