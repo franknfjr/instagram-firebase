@@ -56,7 +56,7 @@ class UserProfileHeader: UICollectionViewCell {
     let postsLabel: UILabel = {
         let label = UILabel()
         
-        let attributedText = NSMutableAttributedString(string: "11\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
         
         attributedText.append(NSAttributedString(string: "Posts", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
                                                                                NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
@@ -69,7 +69,7 @@ class UserProfileHeader: UICollectionViewCell {
     let followersLabel: UILabel = {
         let label = UILabel()
 
-        let attributedText = NSMutableAttributedString(string: "12\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
         
         attributedText.append(NSAttributedString(string: "Followers", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
                                                                                NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
@@ -82,7 +82,7 @@ class UserProfileHeader: UICollectionViewCell {
     let followingLabel: UILabel = {
         let label = UILabel()
         
-        let attributedText = NSMutableAttributedString(string: "10\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
         
         attributedText.append(NSAttributedString(string: "Following", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
                                                                                    NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
