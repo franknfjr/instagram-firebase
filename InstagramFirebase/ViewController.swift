@@ -135,6 +135,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
                 print("Successfully saved user to database.")
             })
+            
+            guard let image = self.plusPhotoButton.imageView?.image else { return }
+            guard let uploadData =  image.jpegData(compressionQuality: 0.3) else { return }
+            
+            let storageItem = Storage.storage().reference().child("picture_profile")
+            storageItem.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print("Failed to upload profile image")
+                } else {
+                    storageItem.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            print(error!)
+                            return
+                        }
+                        
+                        if url != nil {
+                            let imageURL = url!.absoluteString
+                            print("Successfully uploaded profile image", imageURL)
+                            
+                        }
+                    })
+                }
+            }
         })
     }
     
