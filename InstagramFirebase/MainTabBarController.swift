@@ -12,7 +12,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let userProfileController = UserProfileController()
+        let layout = UICollectionViewFlowLayout()
+        let userProfileController = UserProfileController(collectionViewLayout: layout)
         
         let navController = UINavigationController(rootViewController: userProfileController)
         
