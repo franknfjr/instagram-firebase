@@ -18,6 +18,7 @@
 		BBAA6BD9225E0E2D00205C88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAA6BD7225E0E2D00205C88 /* Main.storyboard */; };
 		BBAA6BDB225E0E2F00205C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAA6BDA225E0E2F00205C88 /* Assets.xcassets */; };
 		BBAA6BDE225E0E2F00205C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAA6BDC225E0E2F00205C88 /* LaunchScreen.storyboard */; };
+		BBAE43CC2268083300DF5147 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE43CB2268083300DF5147 /* PhotoSelectorController.swift */; };
 		BBEFB35D225FF7FB007AC3F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBEFB35C225FF7FA007AC3F5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		BBAA6BDA225E0E2F00205C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBAA6BDD225E0E2F00205C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBAA6BDF225E0E2F00205C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBAE43CB2268083300DF5147 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		BBEFB35C225FF7FA007AC3F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C039B0C414D05ACB301A7A0A /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		BBAA6BD2225E0E2D00205C88 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				BBAE43CA2268080400DF5147 /* AddPhoto */,
 				BB11950222627D2100F132B3 /* Login */,
 				BB236174226228A500B069C7 /* UserProfile */,
 				BB618567225EB39D000CBD62 /* Utils */,
@@ -128,6 +131,14 @@
 				BBEFB35C225FF7FA007AC3F5 /* GoogleService-Info.plist */,
 			);
 			path = InstagramFirebase;
+			sourceTree = "<group>";
+		};
+		BBAE43CA2268080400DF5147 /* AddPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				BBAE43CB2268083300DF5147 /* PhotoSelectorController.swift */,
+			);
+			path = AddPhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */,
 				BBAA6BD4225E0E2D00205C88 /* AppDelegate.swift in Sources */,
 				BB11950422627DE400F132B3 /* LoginController.swift in Sources */,
+				BBAE43CC2268083300DF5147 /* PhotoSelectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
