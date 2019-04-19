@@ -65,6 +65,7 @@ class SharePhotoController: UIViewController {
     }
     
     @objc func handleShare() {
+        guard let caption = textView.text, caption.count > 0 else { return }
         guard let image = selectedImage else { return }
         
         guard let uploadData = image.jpegData(compressionQuality: 0.5) else { return }
@@ -115,6 +116,7 @@ class SharePhotoController: UIViewController {
             }
             
             print("Successfully saved post to Database")
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
