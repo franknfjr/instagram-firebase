@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SharePhotoController: UIViewController {
     
@@ -64,7 +65,30 @@ class SharePhotoController: UIViewController {
     }
     
     @objc func handleShare() {
-        print("Share")
+        guard let image = selectedImage else { return }
+        
+        guard let uploadData = image.jpegData(compressionQuality: 0.5) else { return }
+        
+        let storageRef = Storage.storage().reference()
+        
+        let filename = NSUUID().uuidString
+        let storageRefChild = storageRef.child("posts").child(filename)
+
+        storageRefChild.putData(uploadData, metadata: nil) {
+            (metadata, err) in
+            if let err = err {
+                print("Failed to save your profile image in database:", err)
+                return
+            }
+            storageRefChild.downloadURL(completion: { (url, err) in
+                if let err = err {
+                    print("Failed download url", err)
+                }
+                
+                guard let imageUrl = url?.absoluteString else { return }
+
+                print("Sucessfully uploaded post image:", imageUrl)
+            })
+        }
     }
-    
 }
