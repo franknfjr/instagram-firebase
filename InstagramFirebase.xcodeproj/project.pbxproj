@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41E24DD7D32A03D1D2B489F7 /* Pods_InstagramFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1641D849ED322A425AAC23E5 /* Pods_InstagramFirebase.framework */; };
+		BB04925122695C9400621DD0 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB04925022695C9400621DD0 /* SharePhotoController.swift */; };
 		BB11950422627DE400F132B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11950322627DE400F132B3 /* LoginController.swift */; };
 		BB2361712262040000B069C7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361702262040000B069C7 /* MainTabBarController.swift */; };
 		BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361722262053A00B069C7 /* UserProfileController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1641D849ED322A425AAC23E5 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB04925022695C9400621DD0 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 		BB11950322627DE400F132B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BB2361702262040000B069C7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BB2361722262053A00B069C7 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				BBAE43CB2268083300DF5147 /* PhotoSelectorController.swift */,
 				BBA2466A2268AED400931990 /* PhotoSelectorCell.swift */,
 				BBA2466C2268B90B00931990 /* PhotoSelectorHeader.swift */,
+				BB04925022695C9400621DD0 /* SharePhotoController.swift */,
 			);
 			path = AddPhoto;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB04925122695C9400621DD0 /* SharePhotoController.swift in Sources */,
 				BBAA6BD6225E0E2D00205C88 /* SignUpController.swift in Sources */,
 				BBA2466B2268AED400931990 /* PhotoSelectorCell.swift in Sources */,
 				BB618569225EB40B000CBD62 /* Extensions.swift in Sources */,
