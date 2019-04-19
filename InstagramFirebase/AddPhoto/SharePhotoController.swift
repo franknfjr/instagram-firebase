@@ -73,7 +73,7 @@ class SharePhotoController: UIViewController {
         
         let filename = NSUUID().uuidString
         let storageRefChild = storageRef.child("posts").child(filename)
-
+        
         storageRefChild.putData(uploadData, metadata: nil) {
             (metadata, err) in
             if let err = err {
@@ -86,9 +86,28 @@ class SharePhotoController: UIViewController {
                 }
                 
                 guard let imageUrl = url?.absoluteString else { return }
-
+                
                 print("Sucessfully uploaded post image:", imageUrl)
+                
+                self.saveToDatabaseWithImageUrl(imageUrl: imageUrl)
             })
+        }
+    }
+    
+    fileprivate func saveToDatabaseWithImageUrl(imageUrl: String) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let userPostRef = Database.database().reference().child("posts").child(uid)
+        let ref = userPostRef.childByAutoId()
+        
+        let values = ["imageUrl": imageUrl]
+        ref.updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("Failed to save post to Database", err)
+                return
+            }
+            
+            print("Successfully saved post to Database")
         }
     }
 }
