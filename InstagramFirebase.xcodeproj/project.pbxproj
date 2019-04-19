@@ -10,6 +10,8 @@
 		41E24DD7D32A03D1D2B489F7 /* Pods_InstagramFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1641D849ED322A425AAC23E5 /* Pods_InstagramFirebase.framework */; };
 		BB04925122695C9400621DD0 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB04925022695C9400621DD0 /* SharePhotoController.swift */; };
 		BB11950422627DE400F132B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11950322627DE400F132B3 /* LoginController.swift */; };
+		BB1F56BA226975BC0077432B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F56B9226975BC0077432B /* Post.swift */; };
+		BB1F56BC226977DD0077432B /* UserProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F56BB226977DD0077432B /* UserProfilePhotoCell.swift */; };
 		BB2361712262040000B069C7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361702262040000B069C7 /* MainTabBarController.swift */; };
 		BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361722262053A00B069C7 /* UserProfileController.swift */; };
 		BB236176226228C900B069C7 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB236175226228C900B069C7 /* UserProfileHeader.swift */; };
@@ -29,6 +31,8 @@
 		1641D849ED322A425AAC23E5 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB04925022695C9400621DD0 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 		BB11950322627DE400F132B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		BB1F56B9226975BC0077432B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BB1F56BB226977DD0077432B /* UserProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoCell.swift; sourceTree = "<group>"; };
 		BB2361702262040000B069C7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BB2361722262053A00B069C7 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		BB236175226228C900B069C7 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -86,11 +90,20 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		BB1F56B8226975820077432B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB1F56B9226975BC0077432B /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BB236174226228A500B069C7 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				BB2361722262053A00B069C7 /* UserProfileController.swift */,
 				BB236175226228C900B069C7 /* UserProfileHeader.swift */,
+				BB1F56BB226977DD0077432B /* UserProfilePhotoCell.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -124,6 +137,7 @@
 		BBAA6BD2225E0E2D00205C88 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				BB1F56B8226975820077432B /* Models */,
 				BBAE43CA2268080400DF5147 /* AddPhoto */,
 				BB11950222627D2100F132B3 /* Login */,
 				BB236174226228A500B069C7 /* UserProfile */,
@@ -280,7 +294,9 @@
 				BB04925122695C9400621DD0 /* SharePhotoController.swift in Sources */,
 				BBAA6BD6225E0E2D00205C88 /* SignUpController.swift in Sources */,
 				BBA2466B2268AED400931990 /* PhotoSelectorCell.swift in Sources */,
+				BB1F56BA226975BC0077432B /* Post.swift in Sources */,
 				BB618569225EB40B000CBD62 /* Extensions.swift in Sources */,
+				BB1F56BC226977DD0077432B /* UserProfilePhotoCell.swift in Sources */,
 				BB2361712262040000B069C7 /* MainTabBarController.swift in Sources */,
 				BB236176226228C900B069C7 /* UserProfileHeader.swift in Sources */,
 				BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */,
