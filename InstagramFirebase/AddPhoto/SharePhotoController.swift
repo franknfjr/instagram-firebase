@@ -69,6 +69,8 @@ class SharePhotoController: UIViewController {
         
         guard let uploadData = image.jpegData(compressionQuality: 0.5) else { return }
         
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        
         let storageRef = Storage.storage().reference()
         
         let filename = NSUUID().uuidString
@@ -77,6 +79,7 @@ class SharePhotoController: UIViewController {
         storageRefChild.putData(uploadData, metadata: nil) {
             (metadata, err) in
             if let err = err {
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
                 print("Failed to save your profile image in database:", err)
                 return
             }
@@ -106,6 +109,7 @@ class SharePhotoController: UIViewController {
         let values = ["imageUrl": imageUrl, "caption": caption, "imageWidth": postImage.size.width, "imageHeight": postImage.size.height, "creationDate": Date().timeIntervalSince1970] as [String : Any]
         ref.updateChildValues(values) { (err, ref) in
             if let err = err {
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
                 print("Failed to save post to Database", err)
                 return
             }
