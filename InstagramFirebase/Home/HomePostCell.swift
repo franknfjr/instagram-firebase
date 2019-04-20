@@ -10,8 +10,15 @@ import UIKit
 
 class HomePostCell: UICollectionViewCell {
     
-    let photoImageView: UIImageView = {
-        let iv = UIImageView()
+    var post: Post? {
+        didSet {
+            guard let postImageUrl = post?.imageUrl else { return }
+            photoImageView.loadImageView(urlString: postImageUrl)
+        }
+    }
+    
+    let photoImageView: CustomImageView = {
+        let iv = CustomImageView()
         iv.backgroundColor = .blue
         return iv
     }()
