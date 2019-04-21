@@ -14,6 +14,10 @@ class HomePostCell: UICollectionViewCell {
         didSet {
             guard let postImageUrl = post?.imageUrl else { return }
             photoImageView.loadImageView(urlString: postImageUrl)
+            
+            usernameLabel.text = post?.user.username
+            guard let profileImageUrl = post?.user.profileImageUrl else { return }
+            userProfileImageView.loadImageView(urlString: profileImageUrl)
         }
     }
     
