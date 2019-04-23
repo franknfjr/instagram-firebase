@@ -26,12 +26,12 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         
         setupLogOutButton()
         
-//        fetchPosts()
+        //        fetchPosts()
         fetchOrderedPosts()
     }
     
     var posts = [Post]()
-
+    
     fileprivate func fetchOrderedPosts() {
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -41,9 +41,9 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
             guard let dictionary = snapshot.value as? [String: Any] else { return }
             
             guard let user = self.user else { return }
-
+            
             let post = Post(user: user, dictionary: dictionary)
-
+            
             self.posts.insert(post, at: 0)
             self.collectionView?.reloadData()
             
@@ -63,7 +63,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
                 
                 guard let dictionary = value as? [String: Any] else { return }
                 
-                let dummyName = User(dictionary: ["username": "franknfjr"])
+                let dummyName = User(uid: uid, dictionary: ["username": "franknfjr"])
                 let post = Post(user: dummyName, dictionary: dictionary)
                 self.posts.append(post)
             })
@@ -139,20 +139,12 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     fileprivate func fetchUser(){
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot.value ?? "")
-            
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
-            
-            self.user = User(dictionary: dictionary)
+        Database.fetchUserWithUID(uid: uid) { (user) in
+            self.user = user
             
             self.navigationItem.title = self.user?.username
             
             self.collectionView?.reloadData()
-            
-        }) {(err) in
-            print("Failed to fetch user:", err)
-            
         }
     }
 }

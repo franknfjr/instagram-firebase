@@ -29,35 +29,33 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     fileprivate func fetchPosts() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref_posts = Database.database().reference().child("posts").child(uid)
-        let ref_users = Database.database().reference().child("users").child(uid)
-        
-        ref_users.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let userDictionary = snapshot.value as? [String: Any] else { return }
-            
-            let user = User(dictionary: userDictionary)
-            
-            ref_posts.observeSingleEvent(of: .value, with: { (snapshot) in
-                guard let dictionaries = snapshot.value as? [String: Any] else { return }
-                dictionaries.forEach({ ( key, value) in
-                    
-                    guard let dictionary = value as? [String: Any] else { return }
-                    
-                    let post = Post(user: user, dictionary: dictionary)
-                    
-                    self.posts.append(post)
-                })
-                
-                self.collectionView?.reloadData()
-                
-            }) { (err) in
-                print("Failed to fetch posts:", err)
-            }
-        }) { (err) in
-            print("Failed to fetch user for posts:", err)
+       
+        Database.fetchUserWithUID(uid: uid) { (user) in
+            self.fetchPostsWithUser(user)
         }
     }
     
+    fileprivate func fetchPostsWithUser(_ user: User) {
+        
+        let ref_posts = Database.database().reference().child("posts").child(user.uid)
+        
+        ref_posts.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionaries = snapshot.value as? [String: Any] else { return }
+            dictionaries.forEach({ ( key, value) in
+                
+                guard let dictionary = value as? [String: Any] else { return }
+                
+                let post = Post(user: user, dictionary: dictionary)
+                
+                self.posts.append(post)
+            })
+            
+            self.collectionView?.reloadData()
+            
+        }) { (err) in
+            print("Failed to fetch posts:", err)
+        }
+    }
     
     fileprivate func setupNavigationItems() {
         navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "logo2"))
