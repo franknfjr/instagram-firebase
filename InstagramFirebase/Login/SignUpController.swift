@@ -189,7 +189,7 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         
         view.addSubview(alreadyHaveAccountButton)
         
-        alreadyHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBotton: -12, paddingRight: 0, width: 0, height: 50)
+        alreadyHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBotton: 12, paddingRight: 0, width: 0, height: 50)
         
         view.backgroundColor = .white
         
@@ -211,36 +211,5 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         view.addSubview(stackView)
         
         stackView.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingBotton: 0, paddingRight: 40, width: 0, height: 200)
-    }
-}
-
-extension UIView {
-    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBotton: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        if let top = top {
-            self.topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
-        }
-        
-        if let left = left {
-            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
-        }
-        
-        if let bottom = bottom {
-            self.bottomAnchor.constraint(equalTo: bottom, constant: -paddingBotton).isActive = true
-        }
-        
-        if let right = right {
-            self.rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
-        }
-        
-        if width != 0 {
-            widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
-        
-        if height != 0 {
-            heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
     }
 }
