@@ -29,6 +29,7 @@
 		BBAA6BDB225E0E2F00205C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAA6BDA225E0E2F00205C88 /* Assets.xcassets */; };
 		BBAA6BDE225E0E2F00205C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAA6BDC225E0E2F00205C88 /* LaunchScreen.storyboard */; };
 		BBADBB41226FC83B00CDC592 /* UserSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADBB40226FC83B00CDC592 /* UserSearchController.swift */; };
+		BBADBB43226FD1AB00CDC592 /* UserSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADBB42226FD1AB00CDC592 /* UserSearchCell.swift */; };
 		BBAE43CC2268083300DF5147 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE43CB2268083300DF5147 /* PhotoSelectorController.swift */; };
 		BBEFB35D225FF7FB007AC3F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBEFB35C225FF7FA007AC3F5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		BBAA6BDD225E0E2F00205C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBAA6BDF225E0E2F00205C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBADBB40226FC83B00CDC592 /* UserSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchController.swift; sourceTree = "<group>"; };
+		BBADBB42226FD1AB00CDC592 /* UserSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCell.swift; sourceTree = "<group>"; };
 		BBAE43CB2268083300DF5147 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		BBEFB35C225FF7FA007AC3F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C039B0C414D05ACB301A7A0A /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				BBADBB40226FC83B00CDC592 /* UserSearchController.swift */,
+				BBADBB42226FD1AB00CDC592 /* UserSearchCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBADBB43226FD1AB00CDC592 /* UserSearchCell.swift in Sources */,
 				BB82873B226F58CC0080C2BD /* FirebaseUtils.swift in Sources */,
 				BB04925122695C9400621DD0 /* SharePhotoController.swift in Sources */,
 				BBAA6BD6225E0E2D00205C88 /* SignUpController.swift in Sources */,
