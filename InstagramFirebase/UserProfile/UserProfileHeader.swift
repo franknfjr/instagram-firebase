@@ -19,7 +19,7 @@ class UserProfileHeader: UICollectionViewCell {
             
             usernameLabel.text = user?.username
             
-            setupFollowEditButton()
+            setupEditFollowButton()
         }
     }
     
@@ -144,10 +144,7 @@ class UserProfileHeader: UICollectionViewCell {
                 
                 print("Successfully unfollowed user:", self.user?.username ?? "")
                 
-                self.editProfileFollowButton.setTitle("Follow", for: .normal)
-                self.editProfileFollowButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
-                self.editProfileFollowButton.setTitleColor(.white, for: .normal)
-                self.editProfileFollowButton.layer.borderColor = UIColor(white: 0, alpha: 0.2).cgColor
+                self.setupFollowStyle()
             }
         } else {
             // follow
@@ -169,7 +166,14 @@ class UserProfileHeader: UICollectionViewCell {
         }
     }
     
-    fileprivate func setupFollowEditButton() {
+    fileprivate func setupFollowStyle() {
+        self.editProfileFollowButton.setTitle("Follow", for: .normal)
+        self.editProfileFollowButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        self.editProfileFollowButton.setTitleColor(.white, for: .normal)
+        self.editProfileFollowButton.layer.borderColor = UIColor(white: 0, alpha: 0.2).cgColor
+    }
+    
+    fileprivate func setupEditFollowButton() {
         guard let currentLoggedInUserId = Auth.auth().currentUser?.uid else { return }
         guard let userId = user?.uid else { return }
         
@@ -180,12 +184,12 @@ class UserProfileHeader: UICollectionViewCell {
                 if let isFollowing = snapshot.value as? Int, isFollowing == 1 {
                     self.editProfileFollowButton.setTitle("Unfollow", for: .normal)
                 } else {
-                    
+                    self.setupFollowStyle()
                 }
                 
-            }) { (err) in
+            }, withCancel:  { (err) in
                 print("Failed to check if following:", err)
-            }
+            })
         }
         
     }
