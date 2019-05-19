@@ -12,6 +12,7 @@
 		BB0BE5B3226AB9830004A46E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE5B2226AB9830004A46E /* HomeController.swift */; };
 		BB0BE5B5226ABAF40004A46E /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE5B4226ABAF40004A46E /* HomePostCell.swift */; };
 		BB11950422627DE400F132B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11950322627DE400F132B3 /* LoginController.swift */; };
+		BB122AE422919AB2006DB011 /* PreviewPhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB122AE322919AB2006DB011 /* PreviewPhotoContainerView.swift */; };
 		BB1F56BA226975BC0077432B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F56B9226975BC0077432B /* Post.swift */; };
 		BB1F56BC226977DD0077432B /* UserProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F56BB226977DD0077432B /* UserProfilePhotoCell.swift */; };
 		BB2361712262040000B069C7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2361702262040000B069C7 /* MainTabBarController.swift */; };
@@ -41,6 +42,7 @@
 		BB0BE5B2226AB9830004A46E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BB0BE5B4226ABAF40004A46E /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		BB11950322627DE400F132B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		BB122AE322919AB2006DB011 /* PreviewPhotoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoContainerView.swift; sourceTree = "<group>"; };
 		BB1F56B9226975BC0077432B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BB1F56BB226977DD0077432B /* UserProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoCell.swift; sourceTree = "<group>"; };
 		BB2361702262040000B069C7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9BC1F9227901A00042A52C /* CameraController.swift */,
+				BB122AE322919AB2006DB011 /* PreviewPhotoContainerView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				BB236176226228C900B069C7 /* UserProfileHeader.swift in Sources */,
 				BB2361732262053A00B069C7 /* UserProfileController.swift in Sources */,
 				BBAA6BD4225E0E2D00205C88 /* AppDelegate.swift in Sources */,
+				BB122AE422919AB2006DB011 /* PreviewPhotoContainerView.swift in Sources */,
 				BB11950422627DE400F132B3 /* LoginController.swift in Sources */,
 				BB0BE5B5226ABAF40004A46E /* HomePostCell.swift in Sources */,
 				BBA2466D2268B90B00931990 /* PhotoSelectorHeader.swift in Sources */,
