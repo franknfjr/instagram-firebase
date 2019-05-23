@@ -37,6 +37,10 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate {
         setupHUD()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     fileprivate func setupHUD() {
         view.addSubview(capturePhotoButton)
         capturePhotoButton.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBotton: 32, paddingRight: 0, width: 80, height: 80)
