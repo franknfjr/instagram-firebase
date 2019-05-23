@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class CameraController: UIViewController, AVCapturePhotoCaptureDelegate {
+class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewControllerTransitioningDelegate {
     
     let output = AVCapturePhotoOutput()
     
@@ -32,6 +32,8 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        transitioningDelegate = self
+        
         setupCaptureSession()
         
         setupHUD()
@@ -39,6 +41,13 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    let customAnimationPresentor = CustomAnimationPresentor()
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return customAnimationPresentor
     }
     
     fileprivate func setupHUD() {
