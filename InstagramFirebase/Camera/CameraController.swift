@@ -44,10 +44,14 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewC
     }
     
     let customAnimationPresentor = CustomAnimationPresentor()
-    
+    let customAnimationDismisser = CustomAnimationDismisser()
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         return customAnimationPresentor
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return customAnimationDismisser
     }
     
     fileprivate func setupHUD() {

@@ -1,14 +1,15 @@
 //
-//  CustomAnimationPresentor.swift
+//  CustomAnimationDismisser.swift
 //  InstagramFirebase
 //
-//  Created by Frank Ferreira on 23/05/19.
+//  Created by Frank Ferreira on 24/05/19.
 //  Copyright © 2019 Frank Ferreira. All rights reserved.
 //
 
 import UIKit
 
-class CustomAnimationPresentor: NSObject, UIViewControllerAnimatedTransitioning {
+class CustomAnimationDismisser: NSObject, UIViewControllerAnimatedTransitioning {
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
@@ -16,20 +17,18 @@ class CustomAnimationPresentor: NSObject, UIViewControllerAnimatedTransitioning 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         // my cystom transition animation code logic
         
-        let containerView = transitionContext.containerView
+        let containverView = transitionContext.containerView
+        
         guard let fromView = transitionContext.view(forKey: .from) else { return }
         guard let toView = transitionContext.view(forKey: .to) else { return }
         
-        containerView.addSubview(toView)
-        
-        let startingFrame = CGRect(x: -toView.frame.width, y: 0, width: toView.frame.width, height: toView.frame.height)
-        toView.frame = startingFrame
+        containverView.addSubview(toView)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            // animation
-            toView.frame = CGRect(x: 0, y: 0, width: toView.frame.width, height: toView.frame.height)
             
-            fromView.frame = CGRect(x: fromView.frame.width, y: 0, width: fromView.frame.width, height: fromView.frame.height)
+            fromView.frame = CGRect(x: -fromView.frame.width, y: 0, width: fromView.frame.width, height: fromView.frame.height)
+            
+            toView.frame = CGRect(x: 0, y: 0, width: toView.frame.width, height: toView.frame.height)
         }) { (_) in
             transitionContext.completeTransition(true)
         }
