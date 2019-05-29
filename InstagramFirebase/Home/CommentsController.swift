@@ -27,4 +27,18 @@ class CommentsController: UICollectionViewController {
         
         tabBarController?.tabBar.isHidden = false
     }
+    
+    override var inputAccessoryView: UIView? {
+        get {
+            let containerView = UIView()
+            containerView.backgroundColor = .white
+            containerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+            
+            return containerView
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
 }
